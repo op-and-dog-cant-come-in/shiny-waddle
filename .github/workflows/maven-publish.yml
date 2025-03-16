@@ -29,7 +29,8 @@ jobs:
           cache: maven
 
       - name: Configure Maven
-        run: |          mkdir -p ~/.m2
+        run: |
+          mkdir -p ~/.m2
           chmod 700 ~/.m2
           cat << EOF > ~/.m2/settings.xml
           <settings>
