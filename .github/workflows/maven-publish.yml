@@ -35,8 +35,9 @@ jobs:
           distribution: 'temurin'
           server-id: github
           settings-path: ${{ github.workspace }}
-
+      #  $GITHUB_WORKSPACE
       - name: Build and Deploy
-        run: mvn -B deploy -s $GITHUB_WORKSPACE/helloSpring/settings.xml --file helloSpring/pom.xml
+        run: mvn -B deploy -s helloSpring/settings.xml --file helloSpring/pom.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
+
