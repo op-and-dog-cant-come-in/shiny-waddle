@@ -37,7 +37,8 @@ jobs:
           settings-path: ${{ github.workspace }}
       #  $GITHUB_WORKSPACE
       - name: Build and Deploy
-        run: mvn -B deploy -s helloSpring/settings.xml --file helloSpring/pom.xml
+        run: mvn -B deploy -s ${{ github.workspace }}/.m2/settings.xml --file helloSpring/pom.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
+
 
