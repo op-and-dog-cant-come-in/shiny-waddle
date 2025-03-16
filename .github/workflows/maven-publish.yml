@@ -15,18 +15,9 @@ jobs:
     permissions:
       contents: read
       packages: write
-      id-token: write  # 关键权限
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('helloSpring/pom.xml') }}  # 修改这里
-          restore-keys: |
-            ${{ runner.os }}-maven-
 
       - name: Set up JDK 11
         uses: actions/setup-java@v4
@@ -35,10 +26,27 @@ jobs:
           distribution: 'temurin'
           server-id: github
           settings-path: ${{ github.workspace }}
-      #  $GITHUB_WORKSPACE
+          cache: maven
+
+      - name: Configure Maven
+        run: |          mkdir -p ~/.m2
+          chmod 700 ~/.m2
+          cat << EOF > ~/.m2/settings.xml
+          <settings>
+              <servers>
+                  <server>
+                      <id>github</id>
+                      <username>\${env.GITHUB_ACTOR}</username>
+                      <password>\${env.GITHUB_TOKEN}</password>
+                  </server>
+              </servers>
+              <localRepository>\${env.HOME}/.m2/repository</localRepository>
+          </settings>
+          EOF
+
       - name: Build and Deploy
-        run: mvn -B deploy -s ${{ github.workspace }}/.m2/settings.xml --file helloSpring/pom.xml
+        run: mvn -B deploy --file pom.xml
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
