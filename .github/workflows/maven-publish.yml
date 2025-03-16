@@ -46,7 +46,10 @@ jobs:
           EOF
 
       - name: Build and Deploy
-        run: mvn -B deploy --file pom.xml
+        # 自动查找 pom.xml 文件
+        run: |
+          POM_PATH=$(find . -name pom.xml -not -path '*/target/*' | head -n 1)
+          mvn -B deploy --file ${POM_PATH}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
