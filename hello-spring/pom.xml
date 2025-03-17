@@ -9,10 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.shiny-waddle</groupId>
-    <artifactId>helloSpring</artifactId>
+    <artifactId>hello-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <name>helloSpring</name>
     <description>helloSpring</description>
+
     <url/>
     <licenses>
         <license/>
