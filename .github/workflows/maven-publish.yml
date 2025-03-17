@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      actions: read | write
-      contents: read
+      actions: write
+      contents: write
       packages: write
 
     steps:
