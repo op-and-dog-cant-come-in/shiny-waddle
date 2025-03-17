@@ -28,10 +28,10 @@ jobs:
           settings-path: ${{ github.workspace }}
           cache: maven
 
-      - name: Clean before deploy
-        run: |
-          mvn clean
-          rm -rf ${HOME}/.m2/repository/com/shiny-waddle/helloSpring
+      #      - name: Clean before deploy
+      #        run: |
+      #          mvn clean
+      #          rm -rf ${HOME}/.m2/repository/com/shiny-waddle/helloSpring
 
       - name: Configure Maven
         run: |
