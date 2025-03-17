@@ -58,7 +58,7 @@ jobs:
         # 自动查找 pom.xml 文件
         run: |
           POM_PATH=$(find . -name pom.xml -not -path '*/target/*' | head -n 1)
-          mvn -B deploy --file ${POM_PATH}
+          mvn -X -e -B deploy --file ${POM_PATH}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
