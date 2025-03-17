@@ -1,1 +1,4 @@
 # shiny-waddle
+
+lemon7-token
+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
