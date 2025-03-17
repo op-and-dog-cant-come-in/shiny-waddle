@@ -91,11 +91,12 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/shiny-waddle/helloSpring</url>
+            <name>GitHub shiny-waddle/helloSpring</name>
+            <url>https://maven.pkg.github.com/shiny-waddle/hello-spring</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/shiny-waddle/helloSpring</url>
+            <url>https://maven.pkg.github.com/shiny-waddle/hello-spring</url>
             <uniqueVersion>false</uniqueVersion> <!-- 禁止快照唯一版本 -->
         </snapshotRepository>
     </distributionManagement>
