@@ -17,6 +17,10 @@ jobs:
       packages: write
 
     steps:
+      - name: Print GITHUB_ACTOR
+        run: echo "The actor is ${{ github.actor }}"
+
+
       - uses: actions/checkout@v4
 
       - name: Set up JDK 21  # 或 17
@@ -28,10 +32,10 @@ jobs:
           settings-path: ${{ github.workspace }}
           cache: maven
 
-      - name: Clean before deploy
-        run: |
-          mvn clean
-          rm -rf ${HOME}/runner/.m2/repository/com/shiny-waddle/helloSpring
+      #      - name: Clean before deploy
+      #        run: |
+      #          mvn clean
+      #          rm -rf ${HOME}/runner/.m2/repository/com/shiny-waddle/helloSpring
 
       - name: Configure Maven
         run: |
