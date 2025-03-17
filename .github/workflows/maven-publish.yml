@@ -47,8 +47,8 @@ jobs:
               <servers>
                   <server>
                       <id>github</id>
-                      <username>\${env.GITHUB_ACTOR}</username>
-                      <password>\${env.GITHUB_TOKEN}</password>
+                      <username>lemon7-token</username>
+                      <password>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</password>
                   </server>
               </servers>
               <localRepository>\${env.HOME}/.m2/repository</localRepository>
