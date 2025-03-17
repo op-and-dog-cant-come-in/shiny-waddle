@@ -87,4 +87,11 @@
         </plugins>
     </build>
 
+    <!-- 在 pom.xml 的 project 标签内添加 -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/shiny-waddle/helloSpring</url>
+        </repository>
+    </distributionManagement>
 </project>
