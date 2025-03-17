@@ -39,7 +39,6 @@ jobs:
 
       - name: Configure Maven
         run: |
-          mvn clean install
           mkdir -p ~/.m2
           chmod 700 ~/.m2
           cat << EOF > ~/.m2/settings.xml
