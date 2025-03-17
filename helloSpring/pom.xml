@@ -93,5 +93,10 @@
             <id>github</id>
             <url>https://maven.pkg.github.com/shiny-waddle/helloSpring</url>
         </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/shiny-waddle/helloSpring</url>
+            <uniqueVersion>false</uniqueVersion> <!-- 禁止快照唯一版本 -->
+        </snapshotRepository>
     </distributionManagement>
 </project>
