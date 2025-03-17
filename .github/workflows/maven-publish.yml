@@ -39,6 +39,7 @@ jobs:
 
       - name: Configure Maven
         run: |
+          mvn clean install
           mkdir -p ~/.m2
           chmod 700 ~/.m2
           cat << EOF > ~/.m2/settings.xml
@@ -58,7 +59,6 @@ jobs:
         # 自动查找 pom.xml 文件
         run: |
           POM_PATH=$(find . -name pom.xml -not -path '*/target/*' | head -n 1)
-          mvn clean install
           mvn -e -B deploy --file ${POM_PATH}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
