@@ -19,11 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 23
+      - name: Set up JDK 21  # 或 17
         uses: actions/setup-java@v4
         with:
-          java-version: '23'  # 改为目标版本
-          distribution: 'temurin'  # 建议保持默认分发版
+          java-version: '21'  # 官方推荐稳定版本
+          distribution: 'temurin'
           server-id: github
           settings-path: ${{ github.workspace }}
           cache: maven
