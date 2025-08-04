@@ -140,4 +140,5 @@
         <appender-ref ref="DEBUG"/>
         <appender-ref ref="TRACE"/>
     </root>
+
 </configuration>
