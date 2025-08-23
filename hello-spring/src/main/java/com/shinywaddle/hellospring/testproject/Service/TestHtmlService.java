@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 @Slf4j
 @Service
 public class TestHtmlService {
-    public String testHtml() {
-        return "testHtml";
+    public String testHtml(String name) {
+        return name;
     }
 
     // 每5秒执行一次
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(cron = "0 0 10 * * *")
     public void reportCurrentTime() {
         log.info("The time is now {}", LocalDateTime.now());
     }
