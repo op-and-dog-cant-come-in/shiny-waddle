@@ -17,7 +17,7 @@ public class TestResponseBodyController {
     @Autowired
     public TestHtmlService testHtmlService;
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public String testController(@RequestParam String name) {
         log.info("testController has done! name: {}", name);
         return testHtmlService.testHtml(name);
