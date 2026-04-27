@@ -23,7 +23,6 @@ public class TestResponseBodyController {
         return testHtmlService.testHtml(name);
     }
 
-
     @PostMapping("/post")
     public String postController(@RequestBody JSONObject jsonObject) {
         log.info("postController has done! name: {}", jsonObject);
