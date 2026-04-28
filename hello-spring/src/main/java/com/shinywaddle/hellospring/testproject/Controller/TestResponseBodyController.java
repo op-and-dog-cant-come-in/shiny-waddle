@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSONObject;
 import com.shinywaddle.hellospring.testproject.Service.TestHtmlService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,9 +19,10 @@ public class TestResponseBodyController {
     public TestHtmlService testHtmlService;
 
     @GetMapping("/test")
-    public String testController(@RequestParam String name) {
+    public ResponseEntity<String> testController(@RequestParam String name) {
         log.info("testController has done! name: {}", name);
-        return testHtmlService.testHtml(name);
+        String string = testHtmlService.testHtml(name);
+        return ResponseEntity.ok(string);
     }
 
     @PostMapping("/post")
